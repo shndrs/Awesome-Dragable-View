@@ -1,13 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DragableViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DragableViewController" customModule="Awesome_Dragable_View" customModuleProvider="target">
             <connections>
+                <outlet property="handleArea" destination="pS7-lg-d6f" id="tAZ-dv-CLr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +20,43 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS7-lg-d6f">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6K-fV-4Ij">
+                            <rect key="frame" x="157" y="29" width="61" height="7"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="7" id="j1T-oV-TpY"/>
+                                <constraint firstAttribute="width" constant="61" id="w9B-WS-gFQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="Mtl-Om-uZz"/>
+                        <constraint firstItem="Q6K-fV-4Ij" firstAttribute="centerY" secondItem="pS7-lg-d6f" secondAttribute="centerY" id="fBa-dM-4sP"/>
+                        <constraint firstItem="Q6K-fV-4Ij" firstAttribute="centerX" secondItem="pS7-lg-d6f" secondAttribute="centerX" id="s3h-Rd-avn"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-xO-4Kq">
+                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="0.95999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jgu-xO-4Kq" firstAttribute="top" secondItem="pS7-lg-d6f" secondAttribute="bottom" id="BhN-ra-xeK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jgu-xO-4Kq" secondAttribute="bottom" id="Das-O2-u9T"/>
+                <constraint firstItem="jgu-xO-4Kq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kp1-Yr-pZc"/>
+                <constraint firstItem="pS7-lg-d6f" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Thn-hT-R8v"/>
+                <constraint firstItem="pS7-lg-d6f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VXM-on-Hzh"/>
+                <constraint firstItem="pS7-lg-d6f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZRz-5e-neU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jgu-xO-4Kq" secondAttribute="trailing" id="iku-G9-ZD3"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-164" y="-76.011994002998506"/>
         </view>
     </objects>
 </document>

@@ -60,12 +60,12 @@
 			children = (
 				2F6DF60821D751A60047A7B9 /* AppDelegate.swift */,
 				2F6DF60A21D751A60047A7B9 /* ViewController.swift */,
+				2F6DF61A21D751E70047A7B9 /* DragableViewController.swift */,
 				2F6DF60C21D751A60047A7B9 /* Main.storyboard */,
+				2F6DF61B21D751E70047A7B9 /* DragableViewController.xib */,
 				2F6DF60F21D751A90047A7B9 /* Assets.xcassets */,
 				2F6DF61121D751A90047A7B9 /* LaunchScreen.storyboard */,
 				2F6DF61421D751A90047A7B9 /* Info.plist */,
-				2F6DF61A21D751E70047A7B9 /* DragableViewController.swift */,
-				2F6DF61B21D751E70047A7B9 /* DragableViewController.xib */,
 			);
 			path = "Awesome Dragable View";
 			sourceTree = "<group>";
