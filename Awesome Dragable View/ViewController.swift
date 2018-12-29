@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var dViewController:DragableViewController!
     var blurView:UIVisualEffectView!
     
-    let dViewHeight:CGFloat = 600
+    let dViewHeight:CGFloat = 500
     let dViewHandleAreaHeight:CGFloat = 65
     
     var DViewVisible = false
@@ -68,7 +68,12 @@ class ViewController: UIViewController {
         case .began:
             startInteractiveTransition(state: nextState, duration: 0.9)
         case .changed:
-            updateInteractiveTransition(fractionCompleted: 0)
+            
+            let translation = recognizer.translation(in: self.dViewController.handleArea)
+            var fractionComplete = translation.y / dViewHeight
+            fractionComplete = DViewVisible ? fractionComplete : -fractionComplete
+            updateInteractiveTransition(fractionCompleted: fractionComplete )
+            
         case .ended:
             continueInteractiveTransition()
         default:
@@ -101,6 +106,37 @@ class ViewController: UIViewController {
             
             frameAnimator.startAnimation()
             runningAnimations.append(frameAnimator)
+            
+            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) { [weak self] in
+                
+                guard let self = self else { return }
+                
+                switch state {
+                    
+                case .expanded:
+                    self.dViewController.view.layer.cornerRadius = 16
+                case .collapsed:
+                    self.dViewController.view.layer.cornerRadius = 8
+                }
+            }
+            
+            cornerRadiusAnimator.startAnimation()
+            runningAnimations.append(cornerRadiusAnimator)
+            
+            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) { [weak self] in
+                guard let self = self else { return }
+                switch state {
+                    
+                case .expanded:
+                    self.blurView.effect = UIBlurEffect(style: .dark)
+                case .collapsed:
+                    self.blurView.effect = nil
+                }
+            }
+            
+            blurAnimator.startAnimation()
+            runningAnimations.append(blurAnimator)
+            
         }
     }
     
