@@ -22,10 +22,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS7-lg-d6f">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6K-fV-4Ij">
-                            <rect key="frame" x="157" y="29" width="61" height="7"/>
+                            <rect key="frame" x="157" y="21.5" width="61" height="7"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="7" id="j1T-oV-TpY"/>
@@ -35,14 +35,52 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="65" id="Mtl-Om-uZz"/>
+                        <constraint firstAttribute="height" constant="50" id="Mtl-Om-uZz"/>
                         <constraint firstItem="Q6K-fV-4Ij" firstAttribute="centerY" secondItem="pS7-lg-d6f" secondAttribute="centerY" id="fBa-dM-4sP"/>
                         <constraint firstItem="Q6K-fV-4Ij" firstAttribute="centerX" secondItem="pS7-lg-d6f" secondAttribute="centerX" id="s3h-Rd-avn"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-xO-4Kq">
-                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-nY-A0b">
+                            <rect key="frame" x="0.0" y="64" width="375" height="340"/>
+                            <date key="date" timeIntervalSinceReferenceDate="567770585.09082699">
+                                <!--2018-12-29 10:03:05 +0000-->
+                            </date>
+                        </datePicker>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7NA-Ca-95X">
+                            <rect key="frame" x="32" y="523" width="311" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guG-FV-mBq">
+                                    <rect key="frame" x="0.0" y="0.0" width="93" height="30"/>
+                                    <state key="normal" title="Set">
+                                        <color key="titleColor" red="0.0" green="0.67603546114382018" blue="0.15388117440390139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-Gd-HOd">
+                                    <rect key="frame" x="109" y="0.0" width="93" height="30"/>
+                                    <state key="normal" title="Reset"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCY-9X-ang">
+                                    <rect key="frame" x="218" y="0.0" width="93" height="30"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" red="0.97818644659999998" green="0.2395347253" blue="0.35358815510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="0.95999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7NA-Ca-95X" secondAttribute="trailing" constant="32" id="CEY-Qz-Jx9"/>
+                        <constraint firstItem="P0g-nY-A0b" firstAttribute="height" secondItem="jgu-xO-4Kq" secondAttribute="height" multiplier="0.55" id="fM5-cy-Jdu"/>
+                        <constraint firstItem="P0g-nY-A0b" firstAttribute="top" secondItem="jgu-xO-4Kq" secondAttribute="top" constant="64" id="oqe-E7-i6D"/>
+                        <constraint firstItem="P0g-nY-A0b" firstAttribute="leading" secondItem="jgu-xO-4Kq" secondAttribute="leading" id="qtN-se-kZO"/>
+                        <constraint firstAttribute="bottom" secondItem="7NA-Ca-95X" secondAttribute="bottom" constant="64" id="tC0-pg-2Wj"/>
+                        <constraint firstAttribute="trailing" secondItem="P0g-nY-A0b" secondAttribute="trailing" id="vCW-f4-p2z"/>
+                        <constraint firstItem="7NA-Ca-95X" firstAttribute="leading" secondItem="jgu-xO-4Kq" secondAttribute="leading" constant="32" id="wPF-bP-ui5"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

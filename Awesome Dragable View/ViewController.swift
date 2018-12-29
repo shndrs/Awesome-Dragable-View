@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     var blurView:UIVisualEffectView!
     
     let dViewHeight:CGFloat = 500
-    let dViewHandleAreaHeight:CGFloat = 65
+    let dViewHandleAreaHeight:CGFloat = 50
     
     var DViewVisible = false
     var nextState:DViewState {
