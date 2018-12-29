@@ -77,12 +77,36 @@ class ViewController: UIViewController {
     }
     
     func animateTransitionIfNeeded(state:DViewState, duration:TimeInterval) {
-        
+        if runningAnimations.isEmpty {
+            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) { [weak self] in
+                
+                guard let self = self else { return }
+                
+                switch state {
+                    
+                case .expanded:
+                    self.dViewController.view.frame.origin.y = self.view.frame.height - self.dViewHeight
+                case .collapsed:
+                    self.dViewController.view.frame.origin.y = self.view.frame.height - self.dViewHandleAreaHeight
+                }
+            }
+            
+            frameAnimator.addCompletion { [weak self] _ in
+                
+                guard let self = self else { return }
+                
+                self.DViewVisible = !self.DViewVisible
+                self.runningAnimations.removeAll()
+            }
+            
+            frameAnimator.startAnimation()
+            runningAnimations.append(frameAnimator)
+        }
     }
     
     func startInteractiveTransition(state:DViewState, duration:TimeInterval) {
         if runningAnimations.isEmpty {
-            
+            animateTransitionIfNeeded(state: state, duration: duration)
         }
         
         for animator in runningAnimations {
