@@ -11,7 +11,5 @@ import UIKit
 class DragableViewController: UIViewController {
 
     @IBOutlet weak var handleArea: UIView!
-
-
     
 }

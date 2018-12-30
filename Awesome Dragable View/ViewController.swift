@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setUpDragableView()
     }
-
+    
     func setUpDragableView() {
         blurView = UIVisualEffectView()
         blurView.frame = self.view.frame
@@ -49,18 +49,11 @@ class ViewController: UIViewController {
                                             height: dViewHeight)
         dViewController.view.clipsToBounds = true
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dragableViewTapHandler(recognizer:)))
-        
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(dragableViewPanHandler(recognizer:)))
-        
-        dViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
         dViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
-        
     }
     
-    @objc func dragableViewTapHandler(recognizer:UITapGestureRecognizer) {
-        
-    }
+    
 
     @objc func dragableViewPanHandler(recognizer:UIPanGestureRecognizer) {
         switch recognizer.state {
@@ -86,7 +79,6 @@ class ViewController: UIViewController {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) { [weak self] in
                 
                 guard let self = self else { return }
-                
                 switch state {
                     
                 case .expanded:
@@ -163,4 +155,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
